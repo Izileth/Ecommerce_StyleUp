@@ -14,6 +14,7 @@ import { Button } from "./src/components/imported/button";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "./src/components/layout/Navbar/nav.bar";
 import Footer from "./src/components/layout/Footer/footer";
+
 import "./app.css";
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

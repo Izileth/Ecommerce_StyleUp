@@ -7,7 +7,7 @@ import { DiscountCTA } from "~/src/components/hero/Offers/offers";
 import CategoriesGrid from "~/src/components/common/Grid/grid";
 import Container from "~/src/components/layout/Container/container";
 import Section from "~/src/components/common/Section/section";
-import WordCarousel from "~/src/components/hero/Words/carousel";
+;
 import BlogBanner from "~/src/components/common/Banner/banner";
 //Icones
 import { ChevronDown } from "lucide-react";
@@ -60,6 +60,7 @@ export default function Hero() {
             color="dark"
             align="center"
             titleClassName="minimal"
+            className="py-12"
           />
           <CategoriesGrid />
         </div>
@@ -81,19 +82,21 @@ export default function Hero() {
             subtitle="Ficou na Duvida na hora de Pedir?, Veja os Relatos dos Compradores"
             color="dark"
             align="center"
+            className="py-12"
           />
           <TestimonialCarousel testimonials={DataTestimonials} />
         </div>
       </Section>
 
       <Section background="white" padding={false} className="relative">
-        <div className="mx-auto max-w-full  px-4 sm:px-6 lg:px-8 py-6">
+        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 py-14">
           <div className="mb-6">
             <Title
               title="Destaques e promoções"
               subtitle="Desubra o Estilo Perfeito"
               color="dark"
               align="center"
+              className="py-12"
             />
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -121,25 +124,6 @@ export default function Hero() {
               navigateTo="colections/mens"
             />
           </div>
-        </div>
-      </Section>
-
-      <Section background="white" padding={false} className="relative">
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <Title
-              title="Fique Por Dentro"
-              subtitle="Principais tendencias da Temporada"
-              color="dark"
-              align="center"
-            />
-          </div>
-          <WordCarousel 
-            words={['Descontos Exclusivos', 'Financiamento Facilitado', 'Garantia Estendida']} 
-                speed={60}
-                className="text-zinc-950 text-xl mb-6 mt-6"
-                separator="  - "
-              />
         </div>
       </Section>
 

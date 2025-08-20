@@ -3,7 +3,7 @@ import { ArrowRightIcon } from 'lucide-react';
 
 const BlogBanner: React.FC = () => {
   return (
-        <section className="py-16 bg-zinc-950 text-white">
+        <section className="py-8 bg-zinc-950 text-white">
         <div className="max-w-6xl mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1">
@@ -16,12 +16,12 @@ const BlogBanner: React.FC = () => {
             </div>
             
             <a 
-                href="https://timely-cascaron-9610a5.netlify.app/" 
+                href="/products" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center px-8 py-3 bg-white text-gray-900 hover:bg-gray-100 transition-colors rounded-sm"
+                className="flex items-center justify-center px-6 py-2 text-zinc-50  hover:text-zinc-200 transition-colors rounded-xs"
             >
-                <span className="font-medium">Visitar Blog</span>
+                <span className="font-medium">Ver Catálogo</span>
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
             </a>
             </div>

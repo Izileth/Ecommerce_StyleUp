@@ -25,6 +25,7 @@ import { UserAvatar } from "~/src/components/ui/Avatar/avatar";
 import { toast } from "sonner";
 import { LogoutButton } from "~/src/components/ui/User/logout";
 
+import TopBanner from "../../common/Banner/banner.top";
 export default function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -32,11 +33,7 @@ export default function Navbar() {
   const { itemCount, getCart } = useCart();
   
   const [isScrolled, setIsScrolled] = useState(false)
-  // Remova esta linha, pois não vamos mais precisar - o componente SearchComponent gerencia seu próprio estado
-  // const [isSearchOpen, setIsSearchOpen] = useState(false)
-  // const [searchQuery, setSearchQuery] = useState("")
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -51,22 +48,6 @@ export default function Navbar() {
     getCart();
   }, [getCart, isAuthenticated]);
 
-  // Remova estes efeitos relacionados à busca antiga
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     const searchContainer = document.getElementById("search-container")
-  //     if (isSearchOpen && searchContainer && !searchContainer.contains(event.target as Node)) {
-  //       setIsSearchOpen(false)
-  //     }
-  //   }
-  //
-  //   document.addEventListener("mousedown", handleClickOutside)
-  //   return () => document.removeEventListener("mousedown", handleClickOutside)
-  // }, [isSearchOpen])
-  //
-  // useEffect(() => {
-  //   setIsSearchOpen(false)
-  // }, [location])
 
   const navLinks = [
     { href: "/shop", label: "Coleções", hasSubmenu: true },
@@ -96,23 +77,16 @@ export default function Navbar() {
     }
   }
 
-  // Remova esta função que não será mais necessária
-  // const handleSearch = (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   if (searchQuery.trim()) {
-  //     navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
-  //     setIsSearchOpen(false)
-  //     setSearchQuery("")
-  //   }
-  // }
 
   return (
+   <>
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled ? "bg-white/95 backdrop-blur-sm border-b border-gray-100" : "bg-white",
       )}
     >
+      <TopBanner />
       <div className="container max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Mobile Menu Trigger */}
@@ -390,5 +364,6 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+   </>
   )
 }

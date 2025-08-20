@@ -59,15 +59,15 @@ interface SectionTitleProps {
     // Variant styles
     const variantStyles = {
         default: {
-        title: "text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight",
+        title: "text-3xl uppercase sm:text-3xl md:text-6xl font-light tracking-tight",
         subtitle: "text-base sm:text-lg mt-2 sm:mt-3",
         },
         minimal: {
-        title: "text-xl sm:text-2xl font-normal tracking-tight",
+        title: "text-3xl uppercase sm:text-3xl md:text-6xl font-light tracking-tight",
         subtitle: "text-sm sm:text-base mt-1 sm:mt-2",
         },
         decorative: {
-        title: "text-2xl sm:text-3xl md:text-4xl font-light italic",
+        title: "text-3xl uppercase sm:text-3xl md:text-6xl font-light italic",
         subtitle: "text-xs sm:text-sm uppercase tracking-widest mt-3 sm:mt-4",
         },
     }
