@@ -281,7 +281,7 @@ export const useProducts = (): UseProductsReturn => {
 
   return {
     ...memoizedValues,
-    getCollectionProducts, // Adicionado
+    getCollectionProducts, 
     prefetchCollection,
     getProducts,
     getFeaturedProducts,

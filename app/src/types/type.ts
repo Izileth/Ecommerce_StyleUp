@@ -31,8 +31,6 @@ export interface Product {
   features: string[];
   sizes: ProductSize[];
   colors: ProductColor[];
-  // Campos removidos que não existem no backend:
-  // oldPrice?, promoPrice?, promoEnd?, sales?
 }
 export interface ProductSize {
   id?: string;

@@ -1,10 +1,15 @@
 import React, { useMemo, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector} from "react-redux";
+import type { RootState } from "~/src/store/globalStore";
 import { useFeaturedProducts } from "~/src/hooks/useSortBy";
 import ProductCard from "../Card/card";
 import { Button } from "~/src/components/imported/button";
 import { RefreshCw } from "lucide-react";
 import { Title } from "../../hero/Titles/titles";
-
+import RelatedProducts from "../Recommendations/recommentations";
+import type { Product } from "../../common/Lists/list";
+import { useProducts } from "~/src/hooks/useProducts";
 interface FeaturedProductsProps {
   title?: string;
   subtitle?: string;
@@ -14,8 +19,10 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
   title = "Produtos Em Destaque",
   subtitle = "Os produtos mais vendidos em um só lugar",
 }) => {
-  const { featuredProducts, loading, error, refreshFeaturedProducts } =
-    useFeaturedProducts();
+  const { products, currentProduct } = useProducts();
+  const { featuredProducts, loading, error, refreshFeaturedProducts } = useFeaturedProducts();
+
+ 
 
   // Verificar IDs vazios ou duplicados (para debug)
   useEffect(() => {
@@ -113,6 +120,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
             <ProductCard key={`featured-${product.id}`} product={product} />
           ))}
         </div>
+        
         <div className="mt-12 text-center">
           <Button
             onClick={refreshFeaturedProducts}

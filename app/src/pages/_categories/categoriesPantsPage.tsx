@@ -19,10 +19,14 @@ const CalcasGrid = () => {
         category="Calças"
         title="Conforto em Movimento"
         description="Modelagens inteligentes para acompanhar seu ritmo — do casual ao ousado, sempre com personalidade."
-        imageUrl="https://cdn.leonardo.ai/users/c60a0145-a4a8-4ee5-91cf-76495889e8b2/generations/8565d002-4115-465b-ab25-0b402178fa4a/Leonardo_Kino_XL_Fashionforward_person_walking_on_a_clean_city_3.jpg"
+        videoUrl="https://v1.pinimg.com/videos/iht/expMp4/48/8d/f9/488df9ccf4054683ea40509ba19d205d_t4.mp4"
         textPosition="center"
         textColor="light"
         overlayOpacity={0.5}
+        videoOptions={{
+          muted: true,
+          controls: false,
+        }}
       >
           <Button onClick={scrollToContent} variant="outline" className="mt-4 text-zinc-100 bg-transparent border-none rounded-none">
           Explorar Coleção

@@ -6,7 +6,7 @@ import { Button } from "~/src/components/imported/button"
 import { Progress } from "~/src/components/imported/progress"
 import { Separator } from "~/src/components/imported/separator"
 import { cn } from "~/src/lib/utils"
-
+import { formatPriceBRL } from "~/src/utils/format"
 // Types
 interface Product {
   id: string
@@ -92,7 +92,7 @@ export default function CartSummary({ cart }: CartSummaryProps) {
             <span className="text-muted-foreground">
               Subtotal ({itemCount} {itemCount === 1 ? "item" : "items"})
             </span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>{formatPriceBRL(subtotal)}</span>
           </div>
 
           <div className="flex justify-between">
@@ -116,7 +116,7 @@ export default function CartSummary({ cart }: CartSummaryProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                 >
-                  ${shipping.toFixed(2)}
+                  {formatPriceBRL(shipping)}
                 </motion.span>
               )}
             </AnimatePresence>
@@ -132,7 +132,7 @@ export default function CartSummary({ cart }: CartSummaryProps) {
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 0.3 }}
             >
-              ${total.toFixed(2)}
+              {formatPriceBRL(total)}
             </motion.span>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function CartSummary({ cart }: CartSummaryProps) {
               {shipping === 0 ? (
                 <span>Entrega Grátis Aplicada</span>
               ) : (
-                <span>${amountToFreeShipping.toFixed(2)} Preço Restante Para Ganhar Frente Grátis</span>
+                <span>{formatPriceBRL(amountToFreeShipping)} Preço Restante Para Ganhar Frente Grátis</span>
               )}
             </div>
           </div>

@@ -8,7 +8,8 @@ import { useProductRatings } from "~/src/hooks/useProductsRating"
 
 import toast from "react-hot-toast"
 
-import { formatPrice } from "~/src/utils/format"
+
+import { formatPriceBRL } from "~/src/utils/format"
 
 import { Button } from "~/src/components/imported/button"
 import { ArrowLeft, Minus, Plus, Check, ShoppingBag, Tag, Star, Heart, Share2 } from "lucide-react"
@@ -18,6 +19,7 @@ import { Badge } from "~/src/components/imported/badge"
 import { Skeleton } from "~/src/components/imported/skeleton"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/src/components/imported/accordion"
 
+import RelatedProducts from "~/src/components/products/Recommendations/recommentations"
 
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -248,7 +250,7 @@ const ProductDetails: React.FC = () => {
 
 
   return (
-    <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-12 mt-12 h-auto">
       <motion.button
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
@@ -260,7 +262,7 @@ const ProductDetails: React.FC = () => {
         <span className="text-sm">Voltar</span>
       </motion.button>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 h-auto ">
         {/* Coluna da Imagem */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="sticky top-8 space-y-4">
@@ -374,9 +376,9 @@ const ProductDetails: React.FC = () => {
           {/* Preços */}
           <div className="flex items-baseline gap-4">
             <span className={` text-4xl  md:text-6xl font-semibold ${hasDiscount ? "text-zinc-700" : "text-gray-900"}`}>
-              {formatPrice(displayPrice)}
+              {formatPriceBRL(displayPrice)}
             </span>
-            {hasDiscount && <span className="text-gray-400 line-through text-2xl">{formatPrice(product.price)}</span>}
+            {hasDiscount && <span className="text-gray-400 line-through text-2xl">{formatPriceBRL(product.price)}</span>}
           </div>
 
           {/* Avaliação (placeholder) */}
@@ -642,7 +644,7 @@ const ProductDetails: React.FC = () => {
                 ) : (
                   <>
                     <ShoppingBag className="h-4 w-4 mr-2" />
-                    Adicionar ao Carrinho - {formatPrice(displayPrice * quantity)}
+                    Adicionar ao Carrinho - {formatPriceBRL(displayPrice * quantity)}
                   </>
                 )}
               </Button>
@@ -691,6 +693,9 @@ const ProductDetails: React.FC = () => {
             </Accordion>
           </motion.div>
         </motion.div>
+      </div>
+      <div className="h-auto bg-transparent my-12">
+        <RelatedProducts currentProduct={product} />
       </div>
     </div>
   )

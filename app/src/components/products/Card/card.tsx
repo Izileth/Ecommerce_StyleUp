@@ -19,6 +19,9 @@ import { Badge } from "~/src/components/imported/badge";
 import { cn } from "~/src/lib/utils";
 import { toast } from "react-hot-toast"; // Adicione esta importação para feedback ao usuário
 import { useProductRatings } from "~/src/hooks/useProductsRating";
+
+import { formatPriceBRL } from "~/src/utils/format";
+
 interface ProductCardProps {
   product: Product;
   compact?: boolean;
@@ -484,11 +487,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
               hasDiscount ? "text-zinc-600" : "text-gray-900"
             )}
           >
-            {formatPrice(displayPrice)}
+            {formatPriceBRL(displayPrice)}
           </span>
           {hasDiscount && (
             <span className="text-xl text-gray-400 line-through">
-              {formatPrice(product.price)}
+              {formatPriceBRL(product.price)}
             </span>
           )}
         </div>

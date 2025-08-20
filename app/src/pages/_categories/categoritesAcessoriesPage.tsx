@@ -19,10 +19,14 @@ const AcessoriosGrid = () => {
         category="Acessórios"
         title="O Detalhe Que Transforma"
         description="Estilo está nos detalhes. Complete seu visual com atitude e bom gosto."
-        imageUrl="https://cdn.leonardo.ai/users/c60a0145-a4a8-4ee5-91cf-76495889e8b2/generations/aac1985b-075e-4537-9705-71ce0dbd6434/Leonardo_Kino_XL_Fashionforward_person_walking_on_a_clean_city_0.jpg"
+        videoUrl="https://v1.pinimg.com/videos/mc/720p/d0/57/91/d057913998539ded622170bc71c53e76.mp4"
         textPosition="center"
         textColor="light"
         overlayOpacity={0.5}
+        videoOptions={{
+          muted: true,
+          controls: false,
+        }}
       >
           <Button onClick={scrollToContent} variant="outline" className="mt-4 text-zinc-100 bg-transparent border-none rounded-none">
           Explorar Coleção

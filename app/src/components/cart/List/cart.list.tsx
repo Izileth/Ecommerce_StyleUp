@@ -4,6 +4,7 @@ import { Minus, Plus, Trash2 } from "lucide-react"
 import { Button } from "~/src/components/imported/button"
 import { Skeleton } from "~/src/components/imported/skeleton"
 import { cn } from "~/src/lib/utils"
+import { formatPriceBRL } from "~/src/utils/format"
 
 // Types
 interface Product {
@@ -144,7 +145,7 @@ export default function CartItemList({ items = [], onUpdate, onRemove, loading =
                   )}
 
                   <div className="mt-auto flex flex-wrap items-center justify-between gap-2">
-                    <div className="font-medium">${(item.product?.price || 0).toFixed(2)}</div>
+                    <div className="font-medium">{formatPriceBRL(item.product?.price || 0)}</div>
                     <div className="flex items-center rounded-md border bg-background">
                       <Button
                         variant="ghost"

@@ -19,10 +19,14 @@ const CamisetasGrid = () => {
         category="Camisas"
         title="A Base do Seu Estilo"
         description="Camisetas versáteis que elevam o básico ao extraordinário. Para todos os momentos, todos os dias."
-        imageUrl="https://cdn.leonardo.ai/users/c60a0145-a4a8-4ee5-91cf-76495889e8b2/generations/35ebd228-7835-4ddf-9112-7422e71d695f/Leonardo_Kino_XL_A_young_modern_man_wearing_a_minimalist_cotto_1.jpg"
+        videoUrl="https://v1.pinimg.com/videos/mc/720p/10/d7/02/10d7029d70efdad6c89a93aa4c22441b.mp4"
         textPosition="center"
         textColor="light"
         overlayOpacity={0.5}
+        videoOptions={{
+          muted: true,
+          controls: false,
+        }}
       >
           <Button onClick={scrollToContent} variant="outline" className="mt-4 text-zinc-100 bg-transparent border-none rounded-none">
           Explorar Coleção

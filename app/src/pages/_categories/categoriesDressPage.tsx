@@ -19,9 +19,13 @@ const VestidosGrid = () => {
         category="Vestidos"
         title="Fluidez Que Encanta"
         description="Vestidos que dançam com o corpo, exalam elegância e destacam sua beleza natural."
-        imageUrl="https://cdn.leonardo.ai/users/c60a0145-a4a8-4ee5-91cf-76495889e8b2/generations/ac911869-b1b4-43c0-9cd0-55fa01b5dc91/Leonardo_Kino_XL_Elegant_young_woman_wearing_a_flowy_light_dre_0.jpg"
         textPosition="left"
         textColor="light"
+        videoUrl="https://v1.pinimg.com/videos/mc/720p/0a/50/a9/0a50a9873039ce7d0174fa066f699ff7.mp4"
+        videoOptions={{
+          muted: true,
+          controls: false,
+        }}
       >
           <Button onClick={scrollToContent} variant="outline" className="mt-4 text-zinc-100 bg-transparent border-none rounded-none">
           Explorar Coleção
