@@ -45,9 +45,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:title" content="Ecliptica - Moda Atemporal e Misteriosa" />
         <meta name="twitter:description" content="Descubra a essência da moda com Ecliptica. Um universo onde sofisticação, mistério e autenticidade se encontram." />
         <meta name="twitter:image" content="/og-image.jpg" />
-        <link rel="icon" href="https://i.pinimg.com/736x/93/55/dd/9355dd0f9547309097693976b6114585.jpg" />
-        <link rel="icon" href="https://i.pinimg.com/736x/93/55/dd/9355dd0f9547309097693976b6114585.jpg" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="https://i.pinimg.com/736x/93/55/dd/9355dd0f9547309097693976b6114585.jpg" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.svg" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon.svg" />
         <Meta />
         <Links />
       </head>
